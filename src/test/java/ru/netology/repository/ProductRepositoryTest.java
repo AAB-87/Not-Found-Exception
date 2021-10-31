@@ -36,18 +36,19 @@ class ProductRepositoryTest {
     public void shouldRemoveProduct() { // удаление существующего объекта
         repository.removeById(6);
 
-        Product[] expected = new Product[] {first, second, third, fourth, fifth, seventh};
+        Product[] expected = new Product[]{first, second, third, fourth, fifth, seventh};
         Product[] actual = repository.findAll();
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldTrowNotFoundException() { // удаление несуществующего объекта
 
-        Product[] expected = new Product[] {first, second, third, fourth, fifth, sixth, seventh};
+        Product[] expected = new Product[]{first, second, third, fourth, fifth, sixth, seventh};
         Product[] actual = repository.findAll();
         assertThrows(NotFoundException.class, () -> { // проверь что выкинет ошибку (класса NotFoundException)
             repository.removeById(8);
-        } );
+        });
     }
 
 
