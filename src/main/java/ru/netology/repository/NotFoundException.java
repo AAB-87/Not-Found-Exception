@@ -1,8 +1,8 @@
 package ru.netology.repository;
 
-public class NotFoundException extends RuntimeException{
+public class NotFoundException extends RuntimeException{ // класс NotFoundException (дочерний) расширяет класс RuntimeException (родителя)
 
-    public NotFoundException(String s) {
-        super(s);
+    public NotFoundException(String s) { // конструктор с параметром-сообщением
+        super(s); // вызов конструктора родителя
     }
 }

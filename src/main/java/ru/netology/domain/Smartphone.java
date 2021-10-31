@@ -2,12 +2,12 @@ package ru.netology.domain;
 
 import java.util.Objects;
 
-public class Smartphone extends Product { // унаследованный от Product класса Smartphone с полем производитель
-    private String manufacturer;
+public class Smartphone extends Product { // класс Smartphone (дочерний) расширяет класс Product (родителя)
+    private String manufacturer; // содержит переменную manufacturer
 
     public Smartphone() {
         super();
-    } // конструктор без параметров
+    } // конструктор без параметров вызывающий конструктора родителя
 
     public Smartphone(int id, String name, int price, String manufacturer) { // конструктор с параметрами родительскими и своим - manufacturer
         super(id, name, price); // вызов конструктора родителя
