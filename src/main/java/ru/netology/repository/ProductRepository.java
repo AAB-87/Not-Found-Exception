@@ -19,21 +19,21 @@ public class ProductRepository { // репозиторий позволяющи�
         return products; // при вызове метода возвращать массив всех продуктов
     }
 
-    public void findById(int id) { // поиск продукта по идентификатору
+    public Product findById(int id) { // поиск продукта по идентификатору
         for (Product product : products) { // перебираем все продукты в поиске необходимого
             if (product.getId() == id) { // если находится необходимый идентификатор
                 return product;
             }
         }
+        return null;
     }
 
     public void removeById(int id) { // удаление Product'а по id
-        if (products.findById == null) {
-            throw new NotFoundException("Element with id: " + id + " not found");
+        if (findById(id) == null) { // из метода removeById вызывайте метод findById: если результат - null, тогда...
+            throw new NotFoundException("Element with id: " + id + " not found"); // ...тогда выкидывайте исключение NotFoundException
         }
         int length = products.length - 1;
         Product[] tmp = new Product[length];
-//        try {
         int index = 0;
         for (Product product : products) {
             if (product.getId() != id) {
